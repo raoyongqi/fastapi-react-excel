@@ -1,0 +1,43 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 20px;
+}
+
+.result {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.result h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.result pre {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+}
