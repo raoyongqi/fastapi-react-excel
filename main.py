@@ -54,9 +54,11 @@ async def upload_excel(files: List[UploadFile]):
             df = pd.read_excel(tmp_name)
             os.remove(tmp_name)  # 处理完后删除临时文件
 
-            # 获取描述统计信息
-            summary = df.describe().to_dict()
-            result[file.filename] = summary
+            columns = [{'key': str(i), 'name': col, 'editable': True} for i, col in enumerate(df.columns)]
+            rows = df.to_dict(orient='records')
+            for idx, row in enumerate(rows):
+                row['id'] = idx
+            result[file.filename] = {'columns': columns, 'rows': rows}
         except Exception as e:
             error_message = str(e)
             error_traceback = traceback.format_exc()
